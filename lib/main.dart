@@ -58,8 +58,24 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
+                      margin: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black87,
+                          width: 2,
+                        ),
+                      ),
+                      padding: EdgeInsets.all(10),
                       child: Text(
                         tx.amount.toString(),
+                        style: TextStyle(
+                          color: Colors.amberAccent,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Column(
@@ -67,6 +83,9 @@ class MyHomePage extends StatelessWidget {
                         Text(tx.title),
                         Text(
                           tx.date.toString(),
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
                         ),
                       ],
                     ),
