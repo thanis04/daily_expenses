@@ -2,6 +2,7 @@ import './transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:intl/intl.dart';
+import 'package:flat_3d_button/flat_3d_button.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -42,7 +43,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
@@ -51,6 +52,27 @@ class MyHomePage extends StatelessWidget {
               color: Colors.blue,
               child: Text('chart'),
               elevation: 6,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    Flat3dButton(
+                      onPressed: () {},
+                      child: Text('Add Transaction'),
+                      color: Colors.brown,
+                    ),
+                  ]),
             ),
           ),
           Column(
