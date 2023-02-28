@@ -1,8 +1,7 @@
-import './transaction.dart';
+import 'package:daily_expenses/widgets/new_transaction.dart';
+import 'package:daily_expenses/widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:intl/intl.dart';
-import 'package:flat_3d_button/flat_3d_button.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -21,20 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 68.98,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Shirts',
-      amount: 23.65,
-      date: DateTime.now(),
-    ),
-  ];
+  // String titleInput = '';
+  // String amountInput = '';
 
   @override
   Widget build(BuildContext context) {
@@ -53,77 +40,6 @@ class MyHomePage extends StatelessWidget {
               child: Text('chart'),
               elevation: 6,
             ),
-          ),
-          Card(
-            elevation: 5,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                    ),
-                    Flat3dButton(
-                      onPressed: () {},
-                      child: Text('Add Transaction'),
-                      color: Colors.brown,
-                    ),
-                  ]),
-            ),
-          ),
-          Column(
-            children: transactions.map((tx) {
-              return Card(
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 15,
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black87,
-                          width: 2,
-                        ),
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        '\$${tx.amount}',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 14, 166, 242),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          tx.title,
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          DateFormat.yMMMd().format(tx.date),
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              );
-            }).toList(),
           ),
         ],
       ),
