@@ -89,6 +89,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.4"
+  flat_3d_button:
+    dependency: "direct main"
+    description:
+      name: flat_3d_button
+      sha256: "749d02ba577581b919158922aa2f39c677ba3657f22a35f952612e5688880c49"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -126,7 +134,7 @@ packages:
     source: hosted
     version: "2.2.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
