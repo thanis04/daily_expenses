@@ -4,10 +4,10 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transaction;
-  TransactionList(this.transaction);
+  const TransactionList(this.transaction);
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 500,
       child: ListView.builder(
         itemBuilder: (ctx, index) {
@@ -15,7 +15,7 @@ class TransactionList extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.symmetric(
+                  margin: const EdgeInsets.symmetric(
                     vertical: 10,
                     horizontal: 15,
                   ),
@@ -25,10 +25,10 @@ class TransactionList extends StatelessWidget {
                       width: 2,
                     ),
                   ),
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     '\$${transaction[index].amount.toStringAsFixed(2)}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color.fromARGB(255, 14, 166, 242),
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -40,14 +40,14 @@ class TransactionList extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       transaction[index].title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       DateFormat.yMMMd().format(transaction[index].date),
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                         color: Colors.grey,
                       ),
